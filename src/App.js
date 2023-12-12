@@ -12,12 +12,8 @@ function App() {
 }
 function Functionality() {
   const { stored } = useContext(Application);
-  const { setStored } = useContext(Application);
-  function handleButton(id) {
-    const data = [...stored];
-    data.splice(id, 1);
-    setStored(data);
-  }
+  const { handleButton } = useContext(Application);
+
   return (
     <>
       <Form />

@@ -11,11 +11,18 @@ function Context({ children }) {
   const handleMazmoonChange = (e) => {
     setTodo(e.target.value);
   };
+  function handleButton(id) {
+    const data = [...stored];
+    data.splice(id, 1);
+    setStored(data);
+  }
   function handleSubmitButton(e) {
     e.preventDefault();
-    setStored([...stored, { title, todo }]);
-    settitle("");
-    setTodo("");
+    if (title && todo) {
+      setStored([...stored, { title, todo }]);
+      settitle("");
+      setTodo("");
+    } else return;
   }
   return (
     <Application.Provider
@@ -29,6 +36,7 @@ function Context({ children }) {
         handleMazmoonChange,
         handleTitleChange,
         handleSubmitButton,
+        handleButton,
       }}
     >
       {children}
