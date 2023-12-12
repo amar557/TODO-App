@@ -73,7 +73,7 @@ function Form() {
           value={todo}
         />
         <button className={styles.btn} onClick={handleSubmitButton}>
-          add
+          Add
         </button>
       </form>
     </>
