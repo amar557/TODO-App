@@ -62,13 +62,13 @@ function Form() {
       <form className={styles.inputs} onSubmit={handleSubmitButton}>
         <input
           type="text"
-          placeholder="title"
+          placeholder="Title"
           onChange={handleTitleChange}
           value={title}
         />
         <input
           type="text"
-          placeholder="mazmoon"
+          placeholder="Discription"
           onChange={handleMazmoonChange}
           value={todo}
         />
