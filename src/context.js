@@ -8,7 +8,7 @@ function Context({ children }) {
   const handleTitleChange = (e) => {
     settitle(e.target.value);
   };
-  const handleMazmoonChange = (e) => {
+  const handleDiscription = (e) => {
     setTodo(e.target.value);
   };
   function handleButton(id) {
@@ -33,7 +33,7 @@ function Context({ children }) {
         setTodo,
         stored,
         setStored,
-        handleMazmoonChange,
+        handleDiscription,
         handleTitleChange,
         handleSubmitButton,
         handleButton,

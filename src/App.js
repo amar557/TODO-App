@@ -1,7 +1,9 @@
-import { useContext, useRef } from "react";
+import { useContext } from "react";
 import "./App.css";
 import styles from "./App.module.css";
 import { Application } from "./context";
+import Form from "./Form";
+import { RxCross2 } from "react-icons/rx";
 
 function App() {
   return (
@@ -35,44 +37,19 @@ function Functionality() {
 function Tasks({ title, todo, handleButton, id }) {
   return (
     <div className={styles.stored}>
-      <p className={styles.title}>{title}</p>
-      <p className={styles.para}>{todo}</p>
+      <div className={styles.flex}>
+        <p className={styles.bold}>Title :</p>
+        <p className={styles.title}>{title}</p>
+      </div>
+      <div className={styles.flex}>
+        <p className={styles.bold}>Discription :</p>
+        <p className={styles.para}>{todo}</p>
+      </div>
       <button className={styles.btn_2} onClick={() => handleButton(id)}>
-        &times;
+        <RxCross2 />
       </button>
     </div>
   );
 }
 
-function Form() {
-  const {
-    handleTitleChange,
-    title,
-    handleSubmitButton,
-    handleMazmoonChange,
-    todo,
-  } = useContext(Application);
-  return (
-    <>
-      <div className={styles.app}>to do app</div>
-      <form className={styles.inputs} onSubmit={handleSubmitButton}>
-        <input
-          type="text"
-          placeholder="Title"
-          onChange={handleTitleChange}
-          value={title}
-        />
-        <input
-          type="text"
-          placeholder="Discription"
-          onChange={handleMazmoonChange}
-          value={todo}
-        />
-        <button className={styles.btn} onClick={handleSubmitButton}>
-          Add
-        </button>
-      </form>
-    </>
-  );
-}
 export default App;
